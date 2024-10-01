@@ -1,0 +1,129 @@
+.curated-lists {
+  background-color: rgb(235, 226, 226);
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: black;
+    animation: fadeInDown 1.5s ease-in-out forwards;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #dd0d0d;
+      transform: scale(1.1);
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px; // Adjusted margin for better spacing
+    color: rgb(9, 9, 9);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #210331;
+      transform: scale(1.05);
+    }
+  }
+
+  .curated-lists__content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .curated-item {
+      text-align: center;
+      width: 250px;
+      margin-bottom: 20px; // Reduced margin for better spacing
+      animation: fadeIn 2s ease-in-out forwards;
+
+      img {
+        width: 120%;
+        height: auto;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: scale(1.2) rotate(-3deg);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Added shadow effect
+        }
+      }
+
+      h3 {
+        margin-top: 10px; // Adjusted for better spacing
+        font-size: 1.5rem;
+        color: black;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #dd0d0d; // Change color on hover
+        }
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: black;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #210331; // Change color on hover
+        }
+      }
+
+      .curated-item__view-btn {
+        display: block;
+        margin: 10px auto; // Margin for spacing below the text
+        padding: 10px 15px;
+        background-color: #210331;
+        color: white;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background-color: #dd0d0d;
+          transform: scale(1.05);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Added shadow effect
+        }
+      }
+    }
+  }
+}
+
+// Add your keyframe animations
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

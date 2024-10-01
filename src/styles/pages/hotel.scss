@@ -1,0 +1,79 @@
+h1 {
+  text-align: center; // Center the main heading
+  margin-bottom: 30px; // Space below the heading
+  font-family: 'Arial', sans-serif; // Custom font
+  font-size: 2.5rem; // Larger font size for the heading
+  color: #333; // Dark color for contrast
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
+}
+
+.hotel-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px; /* Reduced gap between cards */
+  padding: 15px; /* Reduced padding around the list */
+}
+
+.hotel-card {
+  background-color: #fff;
+  border-radius: 8px; /* Slightly reduced border radius */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  width: 250px; /* Reduced width */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-8px); /* Reduced hover lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Reduced hover shadow */
+  }
+}
+
+.hotel-card__image {
+  width: 100%;
+  height: 150px; /* Reduced height */
+  object-fit: cover;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.hotel-card__info {
+  padding: 10px; /* Reduced padding */
+  text-align: center;
+}
+
+.hotel-card__name {
+  font-size: 1.2rem; /* Reduced font size */
+  margin-bottom: 8px; /* Reduced margin */
+  color: #333;
+}
+
+.hotel-card__location {
+  font-size: 0.9rem; /* Reduced font size */
+  color: #888;
+}
+
+.hotel-card__description {
+  font-size: 0.8rem; /* Reduced font size */
+  color: #666;
+  margin: 8px 0; /* Reduced margin */
+}
+
+.hotel-card__button {
+  background-color: #ff6347; /* Tomato color */
+  color: #fff;
+  border: none;
+  border-radius: 4px; /* Reduced border radius */
+  padding: 8px 16px; /* Reduced padding */
+  font-size: 0.9rem; /* Reduced font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+  &:hover {
+    background-color: #e5533d; /* Darker tomato color */
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

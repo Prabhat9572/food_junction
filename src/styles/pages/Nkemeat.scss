@@ -1,0 +1,90 @@
+.nkemeat {
+  display: flex;
+  background-color: lavenderblush;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  
+  &__image-container {
+    flex: 1;
+    margin-right: 20px;
+
+    .nkemeat__image {
+      width: 90%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.10);
+      }
+    }
+  }
+
+  &__text-container {
+    flex: 2;
+
+    h2 {
+      font-size: 2rem;
+      color: black;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #eb2626; // Change color on hover
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: black;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #350250; // Change color on hover
+      }
+    }
+
+    .nkemeat__description {
+      font-size: 1.2rem;
+      color: black;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.8; // Slightly fade on hover
+      }
+    }
+
+    h4 {
+      font-size: 1.3rem;
+      color: black;
+      margin: 15px 0;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #350250; // Change color on hover
+      }
+    }
+
+    .nkemeat__view-button {
+      padding: 10px 30px;
+      background-color: #350250;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: #eb2626; // Change background on hover
+        transform: scale(1.05); // Scale effect on hover
+      }
+    }
+  }
+}

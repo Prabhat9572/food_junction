@@ -1,0 +1,70 @@
+.fastfood-section {
+  position: relative;
+  height: 450px; // Adjust height as needed
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  text-align: center;
+  color: white; // Text color for contrast
+  overflow: hidden; // Hide overflow for a cleaner look
+
+  // Add a hover effect on the section
+  &:hover {
+    filter: brightness(1.2); // Slightly brighten the background on hover
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); // Semi-transparent background for text readability
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    // Center text vertically
+    h1, p {
+      margin: 0; // Reset margins
+      transition: transform 0.3s; // Transition for the text
+    }
+
+    h1 {
+      font-size: 2.5rem; // Larger font for the title
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); // Text shadow for better readability
+    }
+
+    p {
+      font-size: 1.2rem; // Adjust font size for paragraph
+      margin-bottom: 30px; // Space below paragraph
+    }
+  }
+
+  .view-button {
+    margin-top: 150px; // Position the button lower
+    margin-right: 40%;
+    padding: 10px 30px;
+    background-color: orange; // Button color
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; // Transition for button
+
+    &:hover {
+      background-color: black; // Darken on hover
+      transform: translateY(-3px); // Lift button on hover
+    }
+
+    &:active {
+      transform: translateY(1px); // Push down effect on click
+    }
+  }
+}

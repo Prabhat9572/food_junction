@@ -1,0 +1,110 @@
+$primary-color: #4CAF50; // Green color for buttons and highlights
+$secondary-color: #f4f4f4; // Light gray background color
+$text-color: #333; // Dark text color
+$border-radius: 8px; // Rounded corners
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Shadow effect
+$font-family: 'Roboto', sans-serif; // Use a modern font
+
+body {
+  font-family: $font-family;
+  background-color: #f0f0f0; // Light background for the entire body
+}
+
+.payment-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white; // Change to white for contrast
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  font-family: $font-family;
+
+  h1 {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 1rem;
+    font-size: 2rem; // Increase size for better visibility
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Subtle text shadow
+  }
+
+  .order-summary {
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #fff; // White background for contrast
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .total-price {
+      font-weight: bold;
+      font-size: 1.5rem; // Increase size for visibility
+      margin-top: 1rem;
+      text-align: right;
+      color: $primary-color; // Highlight total price
+    }
+
+    .scanner-container {
+      text-align: center;
+      margin: 1.5rem 0;
+
+      .scanner-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+        box-shadow: $shadow;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05); // Scale effect on hover
+        }
+      }
+    }
+  }
+
+  .confirm-order-button {
+    background-color: $primary-color;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-size: 1.2rem; // Slightly larger font size
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; // Add box-shadow transition
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Shadow effect on hover
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    .order-summary,
+    .address-section,
+    .mobile-number-section {
+      margin-bottom: 1rem;
+    }
+
+    .confirm-order-button {
+      width: 100%;
+    }
+  }
+}

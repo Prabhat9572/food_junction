@@ -1,0 +1,154 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #380820, #180718);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0px 20px;
+
+  // Brand logo
+  &__brand {
+    .navbar-logo {
+      width: 50px;
+      height: 50px; // Set height to match the width for a perfect circle
+      border-radius: 50%; // Make it circular
+      object-fit: cover; // Ensure the image fits within the circle without distortion
+      transition: transform 0.3s ease, filter 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.7));
+      }
+    }
+  }
+
+  // Scrolling Food Junction Title
+  &__title {
+    overflow: hidden; // Hide overflow for scrolling effect
+    flex: 1; // Allow title to take available space
+    display: flex;
+    align-items: center;
+
+    .scrolling-text {
+      display: inline-block;
+      color: #ffffff; // Change to your desired text color
+      font-size: 24px; // Adjust the font size as needed
+      font-weight: bold; // Make it bold for emphasis
+      animation: scroll 15s linear infinite; // Adjust duration for speed
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%); // Start from the right
+        }
+        100% {
+          transform: translateX(-100%); // Move to the left
+        }
+      }
+    }
+  }
+
+  // Toggle button
+  &__toggle {
+    display: none; // Hide by default
+    cursor: pointer;
+    color: #f53a4a;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #ff7e29;
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) { // Show only on small screens
+      display: block;
+    }
+  }
+
+  // Links section
+  &__links {
+    display: flex;
+    align-items: center;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+
+    &.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .navbar__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+
+      li {
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 16px;
+          padding: 10px;
+          border-radius: 5px;
+
+          &:hover {
+            color: #ff7e29;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none; // Hide links in mobile view
+      flex-direction: column;
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 20px;
+      transition: max-height 0.3s ease;
+
+      &.open {
+        display: flex;
+        max-height: 500px;
+      }
+
+      .navbar__list {
+        flex-direction: column;
+
+        li {
+          width: 100%;
+
+          a {
+            padding: 15px;
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #444;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Cart count styles
+  .cart-count {
+    background-color: #ff6f61; // Choose a color that fits your theme
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-left: 5px; // Add some spacing
+    font-size: 0.8em; // Adjust size as needed
+  }
+}

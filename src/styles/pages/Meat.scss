@@ -1,0 +1,109 @@
+.meat {
+  background-color: lavender;
+  padding: 20px;
+  
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #210331;
+    animation: fadeInDown 1.5s ease-in-out forwards;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 200px;
+    height: 300px;  // Set a fixed height for all cards
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &-image {
+      width: 100%;
+      height: 120px;  // Set a fixed height for images to maintain consistency
+      object-fit: cover;  // Ensure images are scaled to fit within the set dimensions
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    &-description {
+      font-size: 1rem;
+      color: #666;
+      margin: 8px 0;
+      height: 40px;  // Set a fixed height to ensure consistent spacing
+      overflow: hidden;  // Hide overflow text if it's too long
+    }
+
+    &-price {
+      font-size: 1.2rem;
+      color: #dd0d0d;
+      margin: 8px 0;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      .meat__button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &.add-to-cart {
+          background-color: #4caf50;
+          color: white;
+
+          &:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+          }
+        }
+
+        &.buy-now {
+          background-color: #2196f3;
+          color: white;
+
+          &:hover {
+            background-color: #0b7dda;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Keyframe animations
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

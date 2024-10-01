@@ -1,0 +1,137 @@
+.menu {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.menu-header {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333; /* Darker text for better readability */
+  font-weight: bold; /* Emphasized header */
+}
+
+.menu-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+}
+
+.menu-card {
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Rounded corners */
+  width: 220px; /* Reduced card width */
+  height: 320px; /* Fixed card height */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: left;
+  transition: transform 0.3s; /* Scale effect on hover */
+  
+  &:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px; /* Reduced fixed image height for uniformity */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.menu-card-content {
+  padding: 15px; /* Padding inside card */
+  background-color: #fff; /* White background for content */
+  height: calc(100% - 180px); /* Adjust height for content area */
+}
+
+.menu-card-content h3 {
+  font-size: 1.4rem; /* Adjusted card title size */
+  margin: 10px 0; /* Margin around title */
+  color: #007bff; /* Blue title for emphasis */
+}
+
+.menu-card-content p {
+  font-size: 1.1rem; /* Adjusted price size */
+  margin: 5px 0; /* Margin around price */
+  color: #555; /* Darker text for price */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Space buttons apart */
+  margin-top: auto; /* Push buttons to the bottom */
+}
+
+.add-to-cart-button,
+.order-now-button {
+  padding: 10px 0; /* Set vertical padding */
+  border: none;
+  border-radius: 5px; /* Rounded button corners */
+  cursor: pointer;
+  font-size: 1rem; /* Button font size */
+  width: 100px; /* Fixed width for both buttons */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+  display: flex; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.add-to-cart-button {
+  background-color: #28a745; /* Green for "Add to Cart" */
+  
+  &:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+}
+
+.order-now-button {
+  background-color: #007bff; /* Blue for "Order Now" */
+  
+  &:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    padding: 10px; /* Reduced padding on smaller screens */
+  }
+
+  .menu-header {
+    font-size: 2rem; /* Smaller header on mobile */
+  }
+
+  .menu-card {
+    width: 90%; /* Full width on mobile */
+    height: auto; /* Adjust height automatically on mobile */
+  }
+
+  .button-group {
+    flex-direction: column; /* Stack buttons on mobile */
+    gap: 10px; /* Space between stacked buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-header {
+    font-size: 1.5rem; /* Even smaller header on very small screens */
+  }
+
+  .menu-card-content h3 {
+    font-size: 1.1rem; /* Smaller title size on small screens */
+  }
+
+  .menu-card-content p {
+    font-size: 0.9rem; /* Smaller price size on small screens */
+  }
+
+  .add-to-cart-button,
+  .order-now-button {
+    font-size: 0.8rem; /* Smaller buttons on very small screens */
+    width: 80px; /* Adjusted width for smaller screens */
+  }
+}
