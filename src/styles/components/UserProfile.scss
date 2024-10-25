@@ -1,0 +1,146 @@
+// src/styles/components/UserProfile.scss
+.user-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &__avatar {
+      font-size: 50px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    &__name {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    &__email {
+      font-size: 16px;
+      color: #666;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+
+    &__orders {
+      flex: 1;
+      margin-right: 20px;
+
+      &-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      &__orders-list {
+        list-style: none;
+        padding: 0;
+
+        &__order {
+          background: #fff;
+          margin: 5px 0;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    &__activity {
+      flex: 1;
+    }
+  }
+
+  &__section {
+    margin-bottom: 30px;
+
+    &-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    &__actions {
+      display: flex;
+      gap: 10px;
+
+      &__button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+
+  .profile-image-modal {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .profile-image-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .profile-image-option {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff4a4a; // Darker shade on hover
+      }
+
+      svg {
+        margin-right: 5px; // Space between icon and text
+      }
+    }
+  }
+  // src/styles/components/UserProfile.scss
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+}

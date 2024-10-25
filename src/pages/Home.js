@@ -5,6 +5,11 @@ import About from './About';
 import FastFood from './fastfood';
 import Discover from './Discover';
 import Pizzahub from './Pizzahub';
+import FoodWastePrevention from './FoodWastePrevention';
+import FoodSuggestions from './FoodSuggestions';
+import ScrollingCards from '../components/ScrollingCards';
+// import InstantFoodGifting from './InstantFoodGifting';
+// import BookCook from './BookCooks'
 //import Meat from './Meat';
 //import FastFood from './FastFoodSection';
 //import Nkemeat from './Nkemeat';
@@ -31,6 +36,8 @@ function Home() {
         </div>
       </header>
 
+      {/* scrolling card  Section */}
+      <ScrollingCards />
        
 {/* Hotel Section */}
 <HotelList /> {/* Corrected the name here to HotelList */}
@@ -40,22 +47,41 @@ function Home() {
 {/* Discover Our Food Section */}
 <Discover />
 
+
+{/* pizzahub section */}
+<Pizzahub />
+
 {/* Fast Food Section */}
 <FastFood />
 
-{/* pizzahub section */}
-      <Pizzahub />
+
+      {/* <InstantFoodGifting/> */}
+      <FoodWastePrevention/>
 
       {/* Curated Lists Section */}
+
+{/* FoodSuggestions section */}
+<FoodSuggestions />
+
+
       <CuratedLists /> {/* Use the new component here */}
 
       
+       
+
       
+       {/* Book Cook Section */}
+       {/* <BookCook /> */}
+
+       
+       
       
       
      
       {/* About Section */}
       <About />
+
+     
     </div>
   );
 }

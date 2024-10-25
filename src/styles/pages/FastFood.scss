@@ -1,70 +1,55 @@
 .fastfood-section {
-  position: relative;
-  height: 450px; // Adjust height as needed
-  background-size: cover;
-  background-position: center;
   display: flex;
-  align-items: center;
-
   justify-content: center;
-  text-align: center;
-  color: white; // Text color for contrast
-  overflow: hidden; // Hide overflow for a cleaner look
+  align-items: center;
+  padding: 40px;
+  background-color: #f9f9f9;
 
-  // Add a hover effect on the section
-  &:hover {
-    filter: brightness(1.2); // Slightly brighten the background on hover
+  .fastfood-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
   }
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); // Semi-transparent background for text readability
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-
-    // Center text vertically
-    h1, p {
-      margin: 0; // Reset margins
-      transition: transform 0.3s; // Transition for the text
-    }
+  .fastfood-text {
+    flex: 1;
+    padding-right: 20px;
 
     h1 {
-      font-size: 2.5rem; // Larger font for the title
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); // Text shadow for better readability
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2rem; // Adjust font size for paragraph
-      margin-bottom: 30px; // Space below paragraph
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .view-button {
+      background-color: #ff4500;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff7043;
+      }
     }
   }
 
-  .view-button {
-    margin-top: 150px; // Position the button lower
-    margin-right: 40%;
-    padding: 10px 30px;
-    background-color: orange; // Button color
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s; // Transition for button
+  .fastfood-image {
+    flex: 1;
 
-    &:hover {
-      background-color: black; // Darken on hover
-      transform: translateY(-3px); // Lift button on hover
-    }
-
-    &:active {
-      transform: translateY(1px); // Push down effect on click
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
   }
 }

@@ -1,6 +1,7 @@
+// src/components/Navbar.js
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
+import { FaBars, FaTimes, FaShoppingCart, FaUser } from 'react-icons/fa';
 import { CartContext } from '../context/CartContext';
 import logo from '../assets/images/fj.png';
 import '../styles/components/navbar.scss';
@@ -54,15 +55,21 @@ function Navbar() {
         <ul className="navbar__list" onClick={closeMenu}>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/menu">Menu</Link></li>
-          <li><Link to="/Pizzahub">Pizzahub</Link></li>
+          <li><Link to="/pizzahub">Pizzahub</Link></li>
+          <li><Link to="/book-cook">Book Cook</Link></li>
           <li><Link to="/hotel">Top Restaurant</Link></li>
+          <li><Link to="/about">About</Link></li>
           <li>
             <Link to="/cart">
               <FaShoppingCart /> Cart 
               {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
             </Link>
           </li>
-          <li><Link to="/about">About</Link></li>
+          <li>
+            <Link to="/profile">
+              <FaUser /> Profile
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

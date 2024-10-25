@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/pages/_discover.scss'; // Import SCSS file
 
@@ -8,7 +8,6 @@ import chikent from '../assets/images/chikent.jpg';
 import Eggmasala from '../assets/images/Eggmasala.jpg';
 import Gobhimasala from '../assets/images/Gobhimasala.jpg';
 import tandoriroti from '../assets/images/tandoriroti.jpg';
-import pizzamargherita from '../assets/images/pizzamargherita.jpg';
 import rolls from '../assets/images/rolls.jpg';
 import butterchicken from '../assets/images/butterchicken.jpg';
 import vegfriedrice from '../assets/images/vegfriedrice.jpg';
@@ -51,29 +50,17 @@ function Discover() {
     });
   };
 
-  // Automatic scrolling functionality
-  useEffect(() => {
+  // Function to scroll left
+  const scrollLeft = () => {
     const carousel = carouselRef.current;
-    let scrollInterval;
+    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+  };
 
-    const startScrolling = () => {
-      scrollInterval = setInterval(() => {
-        carousel.scrollBy({
-          top: 0,
-          left: 200,
-          behavior: 'smooth',
-        });
-
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-          carousel.scrollTo({ left: 0, behavior: 'smooth' });
-        }
-      }, 3000);
-    };
-
-    startScrolling();
-
-    return () => clearInterval(scrollInterval);
-  }, []);
+  // Function to scroll right
+  const scrollRight = () => {
+    const carousel = carouselRef.current;
+    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  };
 
   return (
     <section className="discover">
@@ -83,8 +70,11 @@ function Discover() {
           At Food Junction, we take pride in offering a diverse array of culinary delights that cater to every palate.
         </i>
       </h3>
-      <div className="discover__content-wrapper" ref={carouselRef}>
-        <div className="discover__content">
+      <div className="discover__content-wrapper">
+        <button className="scroll-button left" onClick={scrollLeft}>
+          &lt;
+        </button>
+        <div className="discover__content" ref={carouselRef}>
           {foodImages.map((image, index) => (
             <div className="discover__item" key={index}>
               <img src={image} alt={`Food ${index}`} />
@@ -99,7 +89,14 @@ function Discover() {
             </div>
           ))}
         </div>
+        <button className="scroll-button right" onClick={scrollRight}>
+          &gt;
+        </button>
       </div>
+      {/* Add the See More button here */}
+      <button className="see-more-btn" onClick={() => navigate('/menu')}>
+        See More
+      </button>
       {selectedItem && (
         <div className="quantity-modal">
           <h4>Choose Quantity for {selectedItem.name}</h4>
@@ -113,7 +110,6 @@ function Discover() {
           <button onClick={() => setSelectedItem(null)} className="cancel-btn">Cancel</button>
         </div>
       )}
-     
     </section>
   );
 }

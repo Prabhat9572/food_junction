@@ -44,6 +44,10 @@ function Footer() {
             <li><Link to="/hotel">Top Restaurant</Link></li> {/* Updated to Link */}
             <li><Link to="/Pizzahub">Pizzahub</Link></li> {/* Updated to Link */}
             <li><Link to="/about">About Us</Link></li> {/* Updated to Link */}
+
+
+
+            
           </ul>
         </div>
         

@@ -1,0 +1,58 @@
+.scrolling-cards-container {
+  display: flex;
+  overflow-x: auto; // Allow horizontal scrolling
+  white-space: nowrap; // Keep cards in a single line
+  width: 100vw; // Full width of the viewport
+  height: 300px; // Set a specific height to fit landscape format
+  position: relative; // For potential absolute positioning of children if needed
+  will-change: scroll-position; // Hint to the browser that this element's scroll position will change
+  padding: 20px; // Add padding around the container for better spacing
+  box-sizing: border-box; // Include padding in the width and height calculations
+}
+
+.card {
+  flex: 0 0 auto; // Prevent cards from shrinking
+  min-width: 250px; // Set a minimum width for cards
+  width: 250px; // Fixed width to ensure cards are fully visible
+  margin: 0 15px; // Increase space between cards
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transition for hover effect
+  border-radius: 10px; // Rounded corners for cards
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
+}
+
+.card:hover {
+  transform: scale(1.05); // Scale up card on hover for effect
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); // Enhance shadow on hover
+}
+
+.card-image {
+  width: 100%; // Responsive image
+  height: 100%; // Fill the card height for landscape orientation
+  border-radius: 10px 10px 0 0; // Round top corners of the images
+  object-fit: cover; // Ensure images cover the entire card without distortion
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrolling-cards-container {
+    height: 200px; // Decrease height for smaller screens
+    padding: 10px; // Less padding for smaller screens
+  }
+
+  .card {
+    min-width: 150px; // Decrease the minimum width of cards for small screens
+    width: 150px; // Fixed width for visibility
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolling-cards-container {
+    height: 150px; // Further decrease height for mobile devices
+  }
+
+  .card {
+    min-width: 120px; // Further decrease the minimum width of cards for mobile
+    width: 120px; // Fixed width for mobile visibility
+    margin: 0 5px; // Adjust margin for tighter spacing on mobile
+  }
+}

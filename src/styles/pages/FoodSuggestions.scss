@@ -1,0 +1,132 @@
+.food-suggestions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 100vh; /* Full screen height */
+  background: linear-gradient(135deg, #f9f9f9, #e0f7fa); /* Subtle gradient */
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .text-content {
+    max-width: 50%;
+  }
+
+  .section-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .section-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .features-list {
+    margin-bottom: 30px;
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        font-size: 16px;
+        margin: 10px 0;
+        color: #666;
+        text-align: left;
+        position: relative;
+        padding-left: 20px;
+
+        &:before {
+          content: '✔';
+          position: absolute;
+          left: 0;
+          color: #28a745;
+        }
+      }
+    }
+  }
+
+  .suggestion-button {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  .image-content {
+    max-width: 40%;
+    text-align: center;
+
+    .ai-suggestion-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    .text-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .image-content {
+      max-width: 100%;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    .section-description {
+      font-size: 16px;
+    }
+
+    .features-list ul li {
+      font-size: 14px;
+    }
+
+    .suggestion-button {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 24px;
+    }
+
+    .section-description {
+      font-size: 14px;
+    }
+
+    .features-list ul li {
+      font-size: 12px;
+    }
+
+    .suggestion-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+}

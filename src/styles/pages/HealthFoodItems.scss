@@ -1,0 +1,70 @@
+.health-food-items {
+  padding: 20px;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .section-description {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+
+  .items-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Decreased minimum card width
+    gap: 15px; // Adjusted gap between cards
+
+    .item-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px; // Reduced padding
+      text-align: center;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.03); // Slightly decreased scale on hover
+      }
+
+      .item-image {
+        width: 100%;
+        height: 120px; // Fixed height for images
+        object-fit: cover; // Maintains aspect ratio
+        border-radius: 8px;
+      }
+
+      .item-name {
+        font-size: 1.4rem; // Reduced font size
+        margin: 8px 0; // Reduced margin
+      }
+
+      .item-description {
+        font-size: 0.9rem; // Reduced font size
+        margin-bottom: 8px; // Reduced margin
+      }
+
+      .item-price {
+        font-size: 1rem; // Adjusted font size
+        margin-bottom: 10px; // Reduced margin
+      }
+
+      .add-to-cart-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px; // Reduced padding
+        cursor: pointer;
+        font-size: 0.9rem; // Reduced font size
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+  }
+}
